@@ -1,0 +1,6 @@
+
+
+{!! Form::open() !!}
+
+
+{!! Form::close() !!}

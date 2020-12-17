@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Ubuntu,sans-serif;
+    background: url(/images/bookcase.jpg?29958041496f42e7bee414f44060e1d0) no-repeat;
+    background-size: cover;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+/* start of styling the login page */
+
+
+
+.box {
+    width: 300px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: rgba(0,0,0,0.8);
+    text-align: center;
+    border-radius: 6px;
+}
+
+.box h1{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.box input[type = "text"],.box input[type = "password"]
+{
+    /* border: 0; */
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.box input[type = "text"]::placeholder,.box input[type = "password"]::placeholder{
+    color: white;
+    font-size: 1rem;
+}
+
+.box input[type = "text"]:focus,.box input[type = "password"]:focus
+{
+    width: 280px;
+    border-color: #2ecc2e;
+}
+
+.box input[type = "submit"]{
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc2e;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.box input[type = "submit"]:hover {
+    background: #2ecc2e;
+}
+
+/* end of login page  */
+
+/* /start of the menu page styling  */
+
+.menu {
+    width: 100%;
+    height: 100vh;
+}
+
+header {
+    width: 100%;
+    height: 10vh;
+    background: #2c3e50;
+    top: 0;
+    color: white;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1{
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 1rem;
+    text-transform: uppercase;
+    margin-right: 5px;
+}
+
+header svg{
+    fill: white;
+    min-width: 2rem;
+}
+
+.container {
+    width: 700px;
+    height: 500px;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background: #2c3e50;
+    margin: 10px;
+    border-radius: 6px;
+    transition: all 0.5s ease-in-out;
+}
+
+.nav-link .link-text {
+    text-transform: uppercase;
+}
+
+.nav-link svg {
+    min-width: 2rem;
+    margin: 0 1.5rem;
+    fill: white;
+}
+
+.nav-link:hover {
+    background: white;
+    color: #2c3e50;
+}
+
+.nav-link svg:hover{
+    fill: #2c3e50;
+}
+
+
+
+
+
