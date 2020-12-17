@@ -15,8 +15,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','LoginController@index');
-
+Route::get('/',['uses' => 'LoginController@index','as' => 'login']);
 Route::post('reg',['uses' => 'LoginController@registerLogin','as' => 'register']);
 
-Route::get('info','LoginController@info');
+Route::group(['middleware' => ['auth']], function () {
+
+    Route::get('logout',['uses' =>'LoginController@logout','as' => 'logout']);
+
+    Route::get('menu',function(){
+        return view('menu');
+    })->name('menu');
+
+    Route::get('layout',function(){
+        return view('layout');
+    })->name('layout');
+
+    Route::resource('user', 'UserController');
+});
+
+
+

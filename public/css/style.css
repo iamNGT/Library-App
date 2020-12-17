@@ -16,14 +16,20 @@ body{
     margin: 0;
 }
 
+a{
+    text-decoration: none;
+}
 
+li{
+    list-style: none;
+}
 
 main{
     margin-left: 5rem;
     padding: 1rem;
 }
 
-.navbar {
+.navigationbar {
     width: 5rem;
     height: 100vh;
     position: fixed;
@@ -31,7 +37,7 @@ main{
     transition: width 200ms ease;
 }
 
-.navbar-nav {
+.navigationbar-nav {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -41,15 +47,15 @@ main{
     height: 100%;
 }
 
-.nav-item{
+.navItem{
     width: 100%;
 }
 
-.nav-item:last-child {
+.navItem:last-child {
     margin-top: auto;
 }
 
-.nav-link {
+.navLink {
     display: flex;
     align-items: center;
     height: 5rem;
@@ -57,25 +63,25 @@ main{
     text-decoration: none;
 }
 
-.link-text {
+.linkText {
     display: none;
     margin-left: 1rem;
 }
 
-.nav-link svg{
+.navLink svg{
     min-width: 2rem;
     margin: 0 1.5rem;
 }
 
-.navbar:hover{
+.navigationbar:hover{
     width: 16rem;
 }
 
-.navbar:hover .link-text {
+.navigationbar:hover .linkText {
     display: block;
 }
 
-.navbar .nav-link:hover{
+.navigationbar .navLink:hover{
     color: #2980b9;
 }
 
@@ -93,10 +99,10 @@ main{
 
 .hide svg {
     transform: rotate(0deg);
-    transition: transform 50ms ease; 
+    transition: transform 50ms ease;
 }
 
-.navbar:hover .hide svg{
+.navigationbar:hover .hide svg{
     transform: rotate(-180deg);
 }
 
@@ -114,7 +120,7 @@ svg:hover {
 .search {
    width: 100%;
    height: 10vh;
-   background: #34495e; 
+   background: #34495e;
    display: flex;
    justify-content: flex-end;
    align-items: center;

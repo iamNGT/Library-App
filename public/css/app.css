@@ -161,6 +161,10 @@ header svg{
     fill: #2c3e50;
 }
 
+.info-error ul li{
+    color: red;
+}
+
 
 
 

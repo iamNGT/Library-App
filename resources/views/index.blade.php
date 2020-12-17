@@ -8,12 +8,6 @@
     <title>Library App</title>
 </head>
 <body>
-    {{-- <form action="" class="box" method="POST">
-        <h1>Login</h1>
-        <input type="text" name="" placeholder="Username">
-        <input type="password" name="" placeholder="Password">
-        <input type="submit" value="Sign-in">
-    </form> --}}
     {!! Form::open(['url' => route('register'),'class' => 'box']) !!}
         @method('POST')
         @csrf
@@ -21,8 +15,15 @@
         {!! Form::text('name', null, ['placeholder' => 'username']) !!}
         {!! Form::password('password', ['placeholder' => 'password']) !!}
         {!! Form::submit('sign-in') !!}
-    {!! Form::close() !!}
-
-<p style="color: white">{!!  $errors !!}</p>
+            @if(count($errors) > 0)
+            <div class="info-error">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+        {!! Form::close() !!}
 </body>
 </html>
