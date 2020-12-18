@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    {{-- <link rel="stylesheet" href="./css/style.css"> --}}
+    {!! Html::style('./css/style.css') !!}
+    {!! Html::style('./css/bootstrap.min.css') !!}
+    {{-- <link rel="stylesheet" href="./css/bootstrap.min.css"> --}}
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -72,7 +74,7 @@
 
     <main>
 
-        <div class="search">
+        <div class="searchs">
             <form action="" method="get">
                 <input type="search" name="" placeholder="Faite votre recherche">
                 <input type="submit" value="Search">

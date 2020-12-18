@@ -64,9 +64,11 @@ class UserController extends Controller
      * @param  \{{ namespacedModel }}  ${{ modelVariable }}
      * @return \Illuminate\Http\Response
      */
-    public function edit(lain $lain, User $user)
+    public function edit($id)
     {
         //
+        $user = User::findOrFail($id);
+        return view('users.edit',compact('user'));
     }
 
     /**
@@ -77,9 +79,14 @@ class UserController extends Controller
      * @param  \{{ namespacedModel }}  ${{ modelVariable }}
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, lain $lain, User $user)
+    public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->update($request->all());
+        return view('users.edit',compact('user'));
+        return back()->withOk([
+            "L'utilisateur a été modifié avec succes"
+        ]);
     }
 
     /**
