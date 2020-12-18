@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\lain;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -30,7 +31,7 @@ class UserController extends Controller
      */
     public function create(lain $lain)
     {
-        return view('create');
+        return view('users.create');
     }
 
     /**
@@ -42,7 +43,16 @@ class UserController extends Controller
      */
     public function store(Request $request, lain $lain)
     {
-        //
+        $request->validate([
+            'name' => 'required|min:5',
+            'email' => 'required|email',
+            'password' => 'required|min:6'
+        ]);
+
+        if($request->password === $request->password_confirmation){
+            $user = User::create($request->all());
+            return redirect(route('user.index'))->withOk("l'utilisateur a été crée");
+        }
     }
 
     /**
@@ -83,8 +93,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $user->update($request->all());
-        return view('users.edit',compact('user'));
-        return back()->withOk([
+        return redirect(route('user.edit',$user))->withOk([
             "L'utilisateur a été modifié avec succes"
         ]);
     }
@@ -96,8 +105,9 @@ class UserController extends Controller
      * @param  \{{ namespacedModel }}  ${{ modelVariable }}
      * @return \Illuminate\Http\Response
      */
-    public function destroy(lain $lain, User $user)
+    public function destroy($id)
     {
-        //
+        User::destroy($id);
+        return redirect()->back();
     }
 }

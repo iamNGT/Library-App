@@ -28,8 +28,8 @@
                     <td>{!! $user->email !!}</td>
                     <td>{!! $user->admin !!}</td>
                     <td>
-                        <a href="{!! route('user.destroy',$user) !!}" class="btn btn-danger">Supprimer</a>
-                        <a href="{!! route('user.edit',$user) !!}" class="btn btn-primary">Editer</a>
+                        <a href="{!! route('user.destroy',$user->id) !!}" class="btn btn-danger">Supprimer</a>
+                        <a href="{!! route('user.edit',$user->id) !!}" class="btn btn-primary">Editer</a>
                     </td>
                 </tr>
             @endforeach
