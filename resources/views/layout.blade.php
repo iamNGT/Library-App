@@ -82,6 +82,11 @@
         </div>
         <div class="container">
             @yield('content')
+            <div class="mt-2" style="float: right">
+                <a href="javascript:history.back()" class="btn btn-primary">
+                    <span>Retour</span>
+                </a>
+            </div>
         </div>
     </main>
 </body>

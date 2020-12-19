@@ -15,19 +15,19 @@
         <div class="form-group {!! $errors->has('name') ? 'has-error' : '' !!}">
             {!! Form::label('name','Nom') !!}
         {!! Form::text('name',null,['class' => 'form-control']) !!}
-        {!! $errors->first('name', '<small class="help-block">:message</small>') !!}
+        {!! $errors->first('name', '<small class="help-block" style="color: red">:message</small>') !!}
         </div>
 
         <div class="form-group {!! $errors->has('email') ? 'has-error' : '' !!}">
             {!! Form::label('email','Email') !!}
         {!! Form::input('email','email',null,['class' => 'form-control']) !!}
-        {!! $errors->first('email', '<small class="help-block">:message</small>') !!}
+        {!! $errors->first('email', '<small class="help-block" style="color: red">:message</small>') !!}
         </div>
 
         <div class="form-group {!! $errors->has('password') ? 'has-error' : '' !!}">
             {!! Form::label('password','Password') !!}
         {!! Form::input('password','password',null,['class' => 'form-control']) !!}
-        {!! $errors->first('password', '<small class="help-block">:message</small>') !!}
+        {!! $errors->first('password', '<small class="help-block" style="color: red">:message</small>') !!}
         </div>
 
         <div class="form-group {!! $errors->has('password') ? 'has-error' : '' !!}">
@@ -47,6 +47,7 @@
 
     {{ Form::close() }}
 
+        <a href="" style="color: red"></a>
 @stop
 
 

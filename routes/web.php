@@ -26,11 +26,9 @@ Route::group(['middleware' => ['auth']], function () {
         return view('menu');
     })->name('menu');
 
-    Route::get('layout',function(){
-        return view('layout');
-    })->name('layout');
-
     Route::resource('user', 'UserController');
+
+    Route::resource('book', 'BookController');
 });
 
 
