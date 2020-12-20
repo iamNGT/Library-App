@@ -46,8 +46,6 @@
         <button class="btn btn-primary">Valider</button>
 
     {{ Form::close() }}
-
-        <a href="" style="color: red"></a>
 @stop
 
 
